@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class UserData : MonoBehaviour
+public class UserExperience : MonoBehaviour
 {
-    public static UserData Instance;
+    public static UserExperience Instance;
 
     //Variables
     public string userName;

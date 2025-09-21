@@ -11,32 +11,12 @@ public class MenuManagment : MonoBehaviour
     public Toggle inputIsCat;
     public Toggle inputIsDog;
 
-    //Variables
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (inputIsCat)
-        {
-            inputIsDog.isOn = false;
-        }
-        if (inputIsDog)
-        {
-            inputIsCat.isOn = false;
-        }
-    }
-
     public void StartGame()
     {
-        if (inputName.text != "" && ((inputIsCat && inputIsDog!)||(inputIsCat! && inputIsDog)))
+        if (inputName.text != "" && (inputIsCat.isOn ^ inputIsDog.isOn))
         {
-            UserData.Instance.userName = inputName.text;
-            UserData.Instance.isCat = inputIsCat ? true : false;
+            UserExperience.Instance.userName = inputName.text;
+            UserExperience.Instance.isCat = inputIsCat.isOn ? true : false;
             SceneManager.LoadScene(1);
         }
     }
