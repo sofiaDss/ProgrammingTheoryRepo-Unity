@@ -1,16 +1,19 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Variables
+    [SerializeField] private TMP_Text userNameText;
+    [SerializeField] private TMP_Text userLifeText;
+    private bool isCat;
+    public float totalLife = 50.0f;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        isCat = UserExperience.Instance.isCat;
+        userNameText.text = isCat ? $"{UserExperience.Instance.userName}'s Cat" : $"{UserExperience.Instance.userName}'s Dog";
+        userLifeText.text = $"Life: {totalLife} %";
     }
 }

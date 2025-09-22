@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 62981631}
   - component: {fileID: 62981630}
   - component: {fileID: 62981629}
+  - component: {fileID: 62981633}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -223,6 +224,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &62981633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62981628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45b5f07703043d469e08b74f20bb5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userNameText: {fileID: 737885894}
+  userLifeText: {fileID: 165427642}
+  totalLife: 50
 --- !u!1 &129878091
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Life: 50 %'
+  m_text: 'Life: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1565,6 +1581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1806432922}
+  - component: {fileID: 1806432923}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -1587,6 +1604,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806432923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806432921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1864dff06dec22d43bff2c5eed96c546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalPrefabs:
+  - {fileID: 6057683388036352187, guid: 77b15c0a5c09f7740abf34c4e0f744b2, type: 3}
+  - {fileID: 2794625840965526022, guid: c5258ca4bb9bf554281a925567b742f8, type: 3}
+  - {fileID: 4267494094694176949, guid: 1d984773a265f7b439fc954ca9043935, type: 3}
 --- !u!1 &1902173280
 GameObject:
   m_ObjectHideFlags: 0
