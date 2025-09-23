@@ -3,14 +3,6 @@ using UnityEngine;
 // INHERITANCE
 public class DogBehavior : Animal
 {
-    // ENCAPSULATION
-    private float thrustForce;
-    public float thrust_Force
-    {
-        get { return thrustForce; }
-        set { thrustForce = value; }
-    }
-
     void Start()
     {
         mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
@@ -18,9 +10,12 @@ public class DogBehavior : Animal
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        Move(horizontalInput);
-        AvoidObstacle(0.0f);
+        if (mainManager.isGameActive)
+        {
+            horizontalInput = Input.GetAxis("Horizontal");
+            Move(horizontalInput);
+            AvoidObstacle(null,0.0f);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -29,7 +24,7 @@ public class DogBehavior : Animal
     }
 
     // POLYMORPHISM
-    protected override void AvoidObstacle(float verticalInput)
+    protected override void AvoidObstacle(GameObject playerRb, float jumpForce)
     {
         Debug.Log("Dogs can push walls!");
     }

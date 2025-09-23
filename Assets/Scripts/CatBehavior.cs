@@ -6,7 +6,6 @@ using UnityEngine;
 public class CatBehavior : Animal
 {
     // ENCAPSULATION
-    private float verticalInput;
     private float jumpForce;
     public float jump_Force
     {
@@ -22,13 +21,17 @@ public class CatBehavior : Animal
         mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        Move(horizontalInput);
-        AvoidObstacle(verticalInput);
+        if (mainManager.isGameActive)
+        {
+            horizontalInput = Input.GetAxis("Horizontal");
+            Move(horizontalInput);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                AvoidObstacle(gameObject, jumpForce);
+            }
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -41,10 +44,10 @@ public class CatBehavior : Animal
     }
 
     // POLYMORPHISM
-    protected override void AvoidObstacle(float verticalInput)
+    protected override void AvoidObstacle(GameObject playerRb, float jumpForce)
     {
         Debug.Log("The cat can only jump over walls!");
-        base.AvoidObstacle(verticalInput);
+        base.AvoidObstacle(playerRb, jumpForce);
     }
 
 }

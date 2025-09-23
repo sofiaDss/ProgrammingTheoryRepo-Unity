@@ -1,7 +1,5 @@
 using UnityEngine;
-//2. Cada animal debe interactuar con Wall: perro debe empujar y gato debe saltar.
 //3. Activar el game Over
-//4. Craer y Activar el ¡Victory!
 
 
 // INHERITANCE
@@ -34,8 +32,8 @@ public class Animal : MonoBehaviour
     }
 
     // POLYMORPHISM
-    protected virtual void AvoidObstacle(float verticalInput)
+    protected virtual void AvoidObstacle(GameObject playerRb, float jumpForce)
     {
-        gameObject.transform.Translate(Vector3.up * speed * Time.deltaTime * verticalInput);
+        playerRb.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }

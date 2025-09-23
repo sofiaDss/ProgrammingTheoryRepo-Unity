@@ -7,10 +7,11 @@ public class UserExperience : MonoBehaviour
     //Variables
     public string userName;
     public bool isCat;
-
-    // Store data between screens
-    private void Awake(){
-        if(Instance != null){
+    
+    private void Awake()
+    {
+        if (Instance != null)
+        {
             Destroy(gameObject);
             return;
         }

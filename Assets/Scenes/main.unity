@@ -1444,11 +1444,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userNameText: {fileID: 737885894}
   userLifeText: {fileID: 165427642}
+  gameOverScreen: {fileID: 0}
   animalPrefabs:
   - {fileID: 7863572982771303466, guid: 5513cad65c3085b48bd90965ca269904, type: 3}
   - {fileID: 6691099377659300706, guid: a8d4d3ed9989b9647bd997a070e500c3, type: 3}
   isCat: 0
   totalLife: 50
+  isGameActive: 0
+  jumpCat: 10
 --- !u!4 &1143365574
 Transform:
   m_ObjectHideFlags: 0
@@ -1656,6 +1659,7 @@ MonoBehaviour:
   - {fileID: 2794625840965526022, guid: c5258ca4bb9bf554281a925567b742f8, type: 3}
   - {fileID: 4267494094694176949, guid: 1d984773a265f7b439fc954ca9043935, type: 3}
   spawnRangeX: 13
+  mainManager: {fileID: 1143365572}
   spawnInterval: 1.5
 --- !u!1 &1902173280
 GameObject:
