@@ -18,12 +18,19 @@ public class DogBehavior : Animal
 
     void Update()
     {
-        inputHorizontal = Input.GetAxis("Horizontal");
-        Move(inputHorizontal);
+        horizontalInput = Input.GetAxis("Horizontal");
+        Move(horizontalInput);
+        AvoidObstacle(0.0f);
     }
 
     void OnCollisionEnter(Collision collision)
     {
         modifyLife(collision, mainManager);
+    }
+
+    // POLYMORPHISM
+    protected override void AvoidObstacle(float verticalInput)
+    {
+        Debug.Log("Dogs can push walls!");
     }
 }

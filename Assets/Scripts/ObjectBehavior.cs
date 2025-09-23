@@ -10,7 +10,7 @@ public class ObjectBehavior : MonoBehaviour
     {
         if (gameObject.CompareTag("Wall"))
         {
-            if (collision.gameObject.CompareTag("WallLeft") || collision.gameObject.CompareTag("WallRight"))
+            if (collision.gameObject.CompareTag("WallLeft") || collision.gameObject.CompareTag("WallRight") || collision.gameObject.CompareTag("Wall"))
             {
                 Destroy(gameObject);
             }
