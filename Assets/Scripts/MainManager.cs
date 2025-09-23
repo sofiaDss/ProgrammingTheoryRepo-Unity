@@ -32,7 +32,7 @@ public class MainManager : MonoBehaviour
             isGameActive = false;
             gameOverScreen.SetActive(true);
         }
-        if (GameObject.FindWithTag("Cat").GetComponent<CatBehavior>() != null)
+        if (GameObject.FindWithTag("Cat") != null)
         {
             GameObject.FindWithTag("Cat").GetComponent<CatBehavior>().jump_Force = jumpCat;            
         }

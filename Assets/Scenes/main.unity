@@ -1037,7 +1037,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867520901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1143365573}
+        m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &867520901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,7 +1456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userNameText: {fileID: 737885894}
   userLifeText: {fileID: 165427642}
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 1987874862}
   animalPrefabs:
   - {fileID: 7863572982771303466, guid: 5513cad65c3085b48bd90965ca269904, type: 3}
   - {fileID: 6691099377659300706, guid: a8d4d3ed9989b9647bd997a070e500c3, type: 3}
