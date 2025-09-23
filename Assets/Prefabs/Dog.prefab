@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4935325605619730539}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   life: 0
   speed: 0
   animalRb: {fileID: -4935325605619730539}
+  partnerObject: {fileID: 6057683388036352187, guid: 77b15c0a5c09f7740abf34c4e0f744b2, type: 3}
 --- !u!54 &-4935325605619730539
 Rigidbody:
   m_ObjectHideFlags: 0

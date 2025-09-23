@@ -2,21 +2,25 @@ using UnityEngine;
 
 public class ObjectBehavior : MonoBehaviour
 {
-    //Variables
-    public float addLife;
-    public bool isPartnerCat;
-    public bool isPartnerDog;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    //Variables
+    [SerializeField] private float addLife;
+
+    private void OnCollisionEnter(Collision collision)
     {
-         if (transform.position.y < -12)
+        if (gameObject.CompareTag("Wall"))
         {
-            Destroy(gameObject);
+            if (collision.gameObject.CompareTag("WallLeft") || collision.gameObject.CompareTag("WallRight"))
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (collision.gameObject.CompareTag("WallDown"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

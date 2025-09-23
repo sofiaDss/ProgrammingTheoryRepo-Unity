@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 
 [DefaultExecutionOrder(1000)]
-public class MenuManagment : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     //GameObjects
     public TMP_InputField inputName;

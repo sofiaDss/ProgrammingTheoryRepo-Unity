@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5521979702598497343}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   life: 0
   speed: 0
   animalRb: {fileID: 5521979702598497343}
+  partnerObject: {fileID: 2794625840965526022, guid: c5258ca4bb9bf554281a925567b742f8, type: 3}
 --- !u!54 &5521979702598497343
 Rigidbody:
   m_ObjectHideFlags: 0

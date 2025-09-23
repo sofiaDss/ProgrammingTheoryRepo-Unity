@@ -8,7 +8,7 @@ public class DogBehavior : Animal
     public float thrust_Force
     {
         get { return thrustForce; }
-        set { thrustForce = value;}
+        set { thrustForce = value; }
     }
 
     void Start()

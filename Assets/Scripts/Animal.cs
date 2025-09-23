@@ -7,22 +7,22 @@ public class Animal : MonoBehaviour
     [SerializeField] protected float life;
     [SerializeField] protected float speed;
     [SerializeField] protected Rigidbody animalRb;
+    [SerializeField] protected GameObject partnerObject;
 
-    public void ModifyLife(float addLife)
+    protected void ModifyLife(float addLife)
     {
         life += addLife;
     }
 
-    public void Move()
+    protected void Move()
     {
         float inputHorizontal = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.up * speed * inputHorizontal *  Time.deltaTime);
     }
 
-
     // POLYMORPHISM
-    public virtual void AvoidObstacle()
-    {   
+    protected virtual void AvoidObstacle()
+    {
 
     }
 
