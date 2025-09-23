@@ -4,7 +4,7 @@ public class ObjectBehavior : MonoBehaviour
 {
 
     //Variables
-    [SerializeField] private float addLife;
+    public float addLife;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,7 +17,7 @@ public class ObjectBehavior : MonoBehaviour
         }
         else
         {
-            if (collision.gameObject.CompareTag("WallDown"))
+            if (collision.gameObject.CompareTag("WallDown") || collision.gameObject.CompareTag("Wall"))
             {
                 Destroy(gameObject);
             }

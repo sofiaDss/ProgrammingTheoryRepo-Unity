@@ -13,12 +13,17 @@ public class DogBehavior : Animal
 
     void Start()
     {
-        animalRb = GetComponent<Rigidbody>();
+        mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        inputHorizontal = Input.GetAxis("Horizontal");
+        Move(inputHorizontal);
+    }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        modifyLife(collision, mainManager);
     }
 }

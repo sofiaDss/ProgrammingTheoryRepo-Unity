@@ -18,6 +18,10 @@ public class MainManager : MonoBehaviour
         userLifeText.text = $"Life: {totalLife} %";
         selectAnimal();        
     }
+    void Update()
+    {
+        userLifeText.text = $"Life: {totalLife} %";        
+    }
 
 
     void selectAnimal()

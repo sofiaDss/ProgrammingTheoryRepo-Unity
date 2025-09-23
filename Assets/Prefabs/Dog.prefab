@@ -122,10 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152294af6e73e4e4f9d1e7086100988c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  speed: 0
-  animalRb: {fileID: -4935325605619730539}
+  speed: 10
   partnerObject: {fileID: 6057683388036352187, guid: 77b15c0a5c09f7740abf34c4e0f744b2, type: 3}
+  enemyObject: {fileID: 2794625840965526022, guid: c5258ca4bb9bf554281a925567b742f8, type: 3}
 --- !u!54 &-4935325605619730539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,5 +150,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0

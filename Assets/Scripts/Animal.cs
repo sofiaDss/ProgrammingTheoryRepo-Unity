@@ -1,29 +1,45 @@
 using UnityEngine;
+//1. Cada animal debe ganar o perder vida con sus objetos
+//2. Cada animal debe interactuar con Wall: perro debe empujar y gato debe saltar.
+//3. Activar el game Over
+//4. Craer y Activar el ¡Victory!
+
 
 // INHERITANCE
 public class Animal : MonoBehaviour
 {
     //Variables
-    [SerializeField] protected float life;
+    protected MainManager mainManager;
+    protected float inputHorizontal;
     [SerializeField] protected float speed;
-    [SerializeField] protected Rigidbody animalRb;
     [SerializeField] protected GameObject partnerObject;
+    [SerializeField] protected GameObject enemyObject;
 
-    protected void ModifyLife(float addLife)
+    protected void Move(float inputHorizontal)
     {
-        life += addLife;
+        transform.Translate(Vector3.right * speed * inputHorizontal * Time.deltaTime);
     }
 
-    protected void Move()
+    protected void modifyLife(Collision collision, MainManager mainManager)
     {
-        float inputHorizontal = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.up * speed * inputHorizontal *  Time.deltaTime);
+        if (collision.gameObject.CompareTag(partnerObject.tag))
+        {
+            mainManager.totalLife += partnerObject.GetComponent<ObjectBehavior>().addLife;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag(enemyObject.tag))
+        {
+            mainManager.totalLife -= enemyObject.GetComponent<ObjectBehavior>().addLife;
+            Destroy(collision.gameObject);
+        }
     }
 
     // POLYMORPHISM
     protected virtual void AvoidObstacle()
     {
 
+
     }
+    
 
 }
